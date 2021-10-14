@@ -16,6 +16,10 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
+static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler.sh -o", "externalpipe", NULL };
+static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler.sh -c", "externalpipe", NULL };
+static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout.sh", "externalpipe", NULL };
+
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
@@ -210,7 +214,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_K,           zoom,           {.f =  +1} },
 	{ TERMMOD,              XK_J,           zoom,           {.f =  -1} },
-
+	{ TERMMOD,              XK_U,           externalpipe, { .v = openurlcmd } },
+	{ TERMMOD,              XK_Y,           externalpipe, { .v = copyurlcmd } },
+	{ TERMMOD,              XK_O,           externalpipe, { .v = copyoutput } },
 };
 
 /*
