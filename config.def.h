@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Extended:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Iosevka Extended:pixelsize=22:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -99,7 +99,7 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 
-float alpha = 0.85;
+float alpha = 0.9;
 
 static const char *colorname[] = {
 
