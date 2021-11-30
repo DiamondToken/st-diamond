@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Extended:pixelsize=22:antialias=true:autohint=true";
+static char *font = "Iosevka Extended:pixelsize=20:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -20,7 +20,7 @@ static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler.sh -o", "externalp
 static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler.sh -c", "externalpipe", NULL };
 static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout.sh", "externalpipe", NULL };
 
-static char *shell = "/bin/sh";
+static char *shell = "/usr/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
