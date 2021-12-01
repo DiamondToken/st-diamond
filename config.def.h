@@ -103,40 +103,79 @@ float alpha = 0.9;
 
 static const char *colorname[] = {
 
-  /* 8 normal colors */
-  [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-  [1] = "#ea6962", /* red     */
-  [2] = "#a9b665", /* green   */
-  [3] = "#d8a657", /* yellow  */
-  [4] = "#7daea3", /* blue    */
-  [5] = "#d3869b", /* magenta */
-  [6] = "#89b482", /* cyan    */
-  [7] = "#d4be98", /* white   */
+  /* /\* 8 normal colors *\/ */
+  /* [0] = "#282828", /\* hard contrast: #1d2021 / soft contrast: #32302f *\/ */
+  /* [1] = "#ea6962", /\* red     *\/ */
+  /* [2] = "#a9b665", /\* green   *\/ */
+  /* [3] = "#d8a657", /\* yellow  *\/ */
+  /* [4] = "#7daea3", /\* blue    *\/ */
+  /* [5] = "#d3869b", /\* magenta *\/ */
+  /* [6] = "#89b482", /\* cyan    *\/ */
+  /* [7] = "#d4be98", /\* white   *\/ */
 
-  /* 8 bright colors */
-  [8]  = "#928374", /* black   */
-  [9]  = "#ef938e", /* red     */
-  [10] = "#bbc585", /* green   */
-  [11] = "#e1bb7e", /* yellow  */
-  [12] = "#9dc2ba", /* blue    */
-  [13] = "#e1acbb", /* magenta */
-  [14] = "#a7c7a2", /* cyan    */
-  [15] = "#e2d3ba", /* white   */
+  /* /\* 8 bright colors *\/ */
+  /* [8]  = "#928374", /\* black   *\/ */
+  /* [9]  = "#ef938e", /\* red     *\/ */
+  /* [10] = "#bbc585", /\* green   *\/ */
+  /* [11] = "#e1bb7e", /\* yellow  *\/ */
+  /* [12] = "#9dc2ba", /\* blue    *\/ */
+  /* [13] = "#e1acbb", /\* magenta *\/ */
+  /* [14] = "#a7c7a2", /\* cyan    *\/ */
+  /* [15] = "#e2d3ba", /\* white   *\/ */
 
-  "#add8e6", /* 256 -> cursor */
-  "#555555", /* 257 -> rev cursor*/
-  "#282828", /* 258 -> bg */
-  "#ebdbb2", /* 259 -> fg */
+  /* "#add8e6", /\* 256 -> cursor *\/ */
+  /* "#555555", /\* 257 -> rev cursor*\/ */
+  /* "#282828", /\* 258 -> bg *\/ */
+  /* "#ebdbb2", /\* 259 -> fg *\/ */
+
+  /* solarized dark */
+	"#073642",  /*  0: black    */
+	"#dc322f",  /*  1: red      */
+	"#859900",  /*  2: green    */
+	"#b58900",  /*  3: yellow   */
+	"#268bd2",  /*  4: blue     */
+	"#d33682",  /*  5: magenta  */
+	"#2aa198",  /*  6: cyan     */
+	"#eee8d5",  /*  7: white    */
+	"#002b36",  /*  8: brblack  */
+	"#cb4b16",  /*  9: brred    */
+	"#586e75",  /* 10: brgreen  */
+	"#657b83",  /* 11: bryellow */
+	"#839496",  /* 12: brblue   */
+	"#6c71c4",  /* 13: brmagenta*/
+	"#93a1a1",  /* 14: brcyan   */
+	"#fdf6e3",  /* 15: brwhite  */
+};
+
+/* Terminal colors for alternate (light) palette */
+static const char *altcolorname[] = {
+	/* solarized light */
+	"#eee8d5",  /*  0: black    */
+	"#dc322f",  /*  1: red      */
+	"#859900",  /*  2: green    */
+	"#b58900",  /*  3: yellow   */
+	"#268bd2",  /*  4: blue     */
+	"#d33682",  /*  5: magenta  */
+	"#2aa198",  /*  6: cyan     */
+	"#073642",  /*  7: white    */
+	"#fdf6e3",  /*  8: brblack  */
+	"#cb4b16",  /*  9: brred    */
+	"#93a1a1",  /* 10: brgreen  */
+	"#839496",  /* 11: bryellow */
+	"#657b83",  /* 12: brblue   */
+	"#6c71c4",  /* 13: brmagenta*/
+	"#586e75",  /* 14: brcyan   */
+	"#002b36",  /* 15: brwhite  */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 258;
+unsigned int defaultfg = 12;
+unsigned int defaultbg = 8;
+static unsigned int defaultcs = 14;
+static unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
@@ -218,6 +257,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_U,           externalpipe, { .v = openurlcmd } },
 	{ TERMMOD,              XK_Y,           externalpipe, { .v = copyurlcmd } },
 	{ TERMMOD,              XK_O,           externalpipe, { .v = copyoutput } },
+    { XK_ANY_MOD, XK_F6, swapcolors, {.i = 0} },
 };
 
 /*
